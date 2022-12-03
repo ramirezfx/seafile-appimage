@@ -1,0 +1,16 @@
+app: seafile-applet
+binpatch: true
+
+ingredients:
+  dist: DIST
+  packages:
+    - seafile-gui
+  pretend:
+    - seafile-gui
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ DIST main universe
+    - deb https://linux-clients.seafile.com/seafile-deb/jammy/ stable main
+  script:
+    - mkdir seafile-applet.AppDir
+    - cp ../seafile.desktop seafile-applet.AppDir
+    - cp ../seafile.svg seafile-applet.AppDir
